@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 
 public class Hand {
-    private ArrayList<Card> cards;
+    public ArrayList<Card> cards;
 
     public Hand(){
         cards = new ArrayList<Card>();
@@ -21,8 +21,20 @@ public class Hand {
         String str = "";
 
         for (Card c: cards){
-            str += c.toString();
+            str += c.toString() + "\n";
         }
         return str;
     }
+
+    public boolean give(Card card, Hand otherHand){
+        if (!cards.contains(card)){
+            return false;
+        } else{
+            cards.remove(card);
+            otherHand.add(card);
+            return true;
+        }
+    }
+
+
 }

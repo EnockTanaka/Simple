@@ -13,6 +13,10 @@ public class Card {
         this.isFaceUp = true;
     }
 
+    public void flipCard(){
+        isFaceUp = false;
+    }
+
     //Get the rank
     public int getRank(){
         return rank.getRankValue();
