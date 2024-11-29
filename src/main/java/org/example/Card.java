@@ -4,7 +4,7 @@ public class Card {
 
     private Suit suit;
     private Rank rank;
-    private boolean isFaceUp;
+    public boolean isFaceUp;
 
     //Constructor
     public Card(Rank rank, Suit suit){
@@ -31,7 +31,7 @@ public class Card {
 
     public String toString(){
         String str = "";
-        if (isFaceUp){
+        if (!isFaceUp){
             str += rank.printRank() + " of " + suit.printSuit();
         } else{
             str += "Face Down (nothing to see here)";

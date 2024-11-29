@@ -35,11 +35,24 @@ public class Hand {
 
     public String showHand(){
         String str = "";
+        boolean allFaceUp = true;
 
         for (Card c: cards){
             str += c.toString() + "\n";
+            if (!c.isFaceUp){
+                allFaceUp = false;
+            }
+        }
+        if (allFaceUp){
+            str += "Total points = " + getTotal() + "\n";
         }
         return str;
+    }
+
+    public void flipCards(){
+        for (Card c: cards){
+            c.flipCard();
+        }
     }
 
     public boolean give(Card card, Hand otherHand){
