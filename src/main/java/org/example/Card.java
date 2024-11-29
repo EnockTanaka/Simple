@@ -10,16 +10,19 @@ public class Card {
     public Card(Rank rank, Suit suit){
         this.rank = rank;
         this.suit = suit;
-        this.isFaceUp = true;
+        this.isFaceUp = false;
     }
 
     public void flipCard(){
-        isFaceUp = false;
+        isFaceUp = !isFaceUp;
     }
 
     //Get the rank
     public int getRank(){
         return rank.getRankValue();
+    }
+    public String printRank() {
+        return rank.printRank();
     }
 
     public String getSuit(){

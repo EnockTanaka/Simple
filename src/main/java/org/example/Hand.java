@@ -17,6 +17,22 @@ public class Hand {
         cards.add(card);
     }
 
+    public int getTotal(){
+        int totalPts = 0;
+        boolean hasAce = false;
+        for (int i = 0; i < cards.size(); i++){
+            totalPts += cards.get(i).getRank();
+
+            if (cards.get(i).printRank() == "Ace"){
+                hasAce = true;
+            }
+            if (hasAce && totalPts <= 11){
+                totalPts += 10;
+            }
+        }
+        return totalPts;
+    }
+
     public String showHand(){
         String str = "";
 
